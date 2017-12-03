@@ -1,35 +1,40 @@
 import React from 'react';
-import './header.css';
+import './header.scss';
 
 function Header() {
   return (
     <main className="website">
       <header className="header">
-        <h2>Today is {new Date().toLocaleDateString()}.</h2>
-        <figure>
-          {/* <img /> */}
-          <figcaption>Logo</figcaption>
-        </figure>
-        <h1>“News App”</h1>
+        <div className="header__head">
+          <figure>
+            {/* <img /> */}
+            <figcaption>Logo</figcaption>
+          </figure>
+          <h2>Today is {new Date().toLocaleDateString()}</h2>
+        </div>
+        <div className="title">
+          <h1>“News”</h1>
+        </div>
       </header>
       <div className="search">
-        {/* <label for="stext">
-          search and filter by text
-        </label> */}
-
-        <input
-          type="text"
-          className="stext"
-          name="query"
-          placeholder="enter text"
-          // value={this.state.search}
-          // onChange={this.updateSearch}
-        />
+        <div className="sLists">List of articles:</div>
+        <label htmlFor="stext">
+          Search and filter by text:
+          <input
+            type="text"
+            className="stext"
+            name="query"
+            placeholder="Search..."
+            // value={this.state.search}
+            // onChange={this.updateSearch}
+          />
+        </label>
       </div>
 
       <section>
         <article className="articles">
-          <h2><button> heading button</button></h2>
+          {/* <h2><button className="articles_button"> heading button </button></h2> */}
+          <h3><a className="articles_a" href="asd">heading </a></h3>
           <span className="articles__text">
             Solutions
             Depending on which version of React you are running, you do have
@@ -39,18 +44,26 @@ function Header() {
             unlike earlier versions of React where you were forced to wrap
             all sibling components in a parent component.
           </span>
-          <div className="like">
-            <img src="" alt="images" />
-            <button>
+
+          <div className="asides">
+            <ul className="asides__ul">
+              <li className="images">images</li>
+              <li className="likes" />
+            </ul>
+            {/* <img src="" alt="images" /> */}
+
+            {/* <button>
               like
-            </button>
+            </button> */}
           </div>
         </article>
       </section>
 
-      <footer>
+      <footer className="footer">
         Some copyright
-        <address>email</address>
+        <address> Contact information:
+          <a href="mailto:someone@example.com">someone@example.com</a>
+        </address>
       </footer>
     </main>
   );
